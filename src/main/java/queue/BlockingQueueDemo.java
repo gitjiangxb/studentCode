@@ -27,6 +27,6 @@ import java.util.List;
  */
 public class BlockingQueueDemo {
     public static void main(String[] args) {
-        List list = null;
+
     }
 }
