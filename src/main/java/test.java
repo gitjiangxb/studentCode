@@ -6,4 +6,7 @@
  * @Version 1.0
  */
 public class test {
+    public static void main(String[] args) {
+        System.out.println("其他好的代码！");
+    }
 }
