@@ -8,4 +8,7 @@ package es;
  * @Version 1.0
  */
 public class ES {
+    public static void main(String[] args) {
+        System.out.printf("ES");
+    }
 }

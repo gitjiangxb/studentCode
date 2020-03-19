@@ -8,4 +8,7 @@ package redis;
  * @Version 1.0
  */
 public class Redis {
+    public static void main(String[] args) {
+        System.out.printf("Redis");
+    }
 }
