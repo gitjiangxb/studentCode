@@ -2,6 +2,7 @@ package queue;
 
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
 /**
  * @ClassName: BlockingQueueDemo
@@ -28,6 +29,17 @@ import java.util.concurrent.ArrayBlockingQueue;
  */
 public class BlockingQueueDemo {
     public static void main(String[] args) {
-        ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue(5);
+        throwException();
+    }
+
+    /**
+     * BlockingQueue 阻塞队列API 之 抛出异常组
+     */
+    private static void throwException(){
+        BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<String>(3);
+
+        System.out.println(blockingQueue.add("a"));
+        System.out.println(blockingQueue.add("b"));
+        System.out.println(blockingQueue.add("c"));
     }
 }
