@@ -1,6 +1,7 @@
 package queue;
 
 import java.util.List;
+import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * @ClassName: BlockingQueueDemo
@@ -27,6 +28,6 @@ import java.util.List;
  */
 public class BlockingQueueDemo {
     public static void main(String[] args) {
-
+        ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue(5);
     }
 }
