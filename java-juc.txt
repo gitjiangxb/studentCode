@@ -1,1 +1,16 @@
 java JUC并发包
+
+queue/ProdConsumer_TraditionDemo.java
+    生产者消费者模式的实现演变
+        旧的
+            加锁：synchronized
+            等待：wait
+            唤醒：notify
+        新的
+            加锁：lock
+            等待：await
+            唤醒：signa
+
+    问题引入：
+        synchronized 与 lock 有什么区别?
+            queue.SyncAndReentrantLockDemo
