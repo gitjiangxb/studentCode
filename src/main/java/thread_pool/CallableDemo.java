@@ -14,7 +14,8 @@ import java.util.concurrent.TimeUnit;
  *  1、继承Thread类,重写run方法
  *  2、实现Runnable接口,实现run方法
  *  3、实现Callable接口，实现call方法
- *  4、
+ *  4、通过线程池
+ *
  * Runnable接口 与 Callable接口 的区别：
  *  1、Runnable接口没有返回值；Callable接口有返回值
  *  2、Runnable接口不会抛异常，Callable接口会抛异常
