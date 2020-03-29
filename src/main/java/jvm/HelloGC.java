@@ -26,6 +26,8 @@ import java.util.concurrent.TimeUnit;
 public class HelloGC {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("******HelloGC********");
-        TimeUnit.SECONDS.sleep(Integer.MAX_VALUE);
+        // new一个超过15M的变量去验证垃圾回收
+        byte[] bytes = new byte[15 * 1024 * 1024];
+//        TimeUnit.SECONDS.sleep(Integer.MAX_VALUE);
     }
 }
