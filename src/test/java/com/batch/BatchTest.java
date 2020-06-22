@@ -1,7 +1,6 @@
 package com.batch;
 
 import batch.BatchApplication;
-import batch.batches.customer.CustomerJob;
 import batch.service.JobLauncherService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.Map;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {BatchApplication.class, CustomerJob.class})
+@SpringBootTest(classes = {BatchApplication.class})
 public class BatchTest {
 
     @Autowired
@@ -26,6 +25,9 @@ public class BatchTest {
 
     @Autowired
     private Job smsDailyJob;
+
+    @Autowired
+    private Job voiceTypeTJob;
 
     @Test
     public void getCustomerJob() throws Exception {
@@ -46,5 +48,16 @@ public class BatchTest {
 
         Map<String, Object> jobResult = jobLauncherService.startJob(smsDailyJob, jobParameters);
         System.out.println(jobResult);
+    }
+
+    @Test
+    public void testVoiceDayReportJob() throws Exception{
+        JobParameters jobParameters = new JobParametersBuilder()
+                .addLong("time", System.currentTimeMillis())
+                .addString("voice_sms_app_id","1118")
+                .toJobParameters();
+
+        Map<String, Object> stringObjectMap = jobLauncherService.startJob(voiceTypeTJob, jobParameters);
+        System.out.println(stringObjectMap);
     }
 }
