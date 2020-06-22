@@ -24,7 +24,7 @@ public class ReflectionUtil {
 
     static {
         // 指定加载包路径
-        CLASS_SET = getClassSet("designPatterns.strategy.impl");
+        CLASS_SET = getClassSet("designPatterns");
     }
 
     public static Set<Class<?>> getClassSet(){
@@ -45,6 +45,7 @@ public class ReflectionUtil {
                 URL url = urls.nextElement();
 
                 if (url != null){
+                    // 得到url的协议，比如ftp, http, nntp,file,jar...
                     String protocol = url.getProtocol();
 
                     if (protocol.equals("file")){
