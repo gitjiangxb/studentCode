@@ -1,1 +1,5 @@
-master分支
+Spring-Batch分支：
+    批处理框架
+
+design-patterns分支：
+    设计模式
