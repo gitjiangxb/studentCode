@@ -1,0 +1,18 @@
+1. spring batch 架构视频
+ https://www.bilibili.com/video/BV1gK411j7hv?p=1
+
+2. spring batch 一般的学习视频
+ bilibili 上搜索： spring batch
+
+3. batch 、 channel 、filter 模式的延申
+ elk
+ logstash
+ filebeat
+ kettle
+
+
+ 我们的应用场景：
+ 4. ETL
+  从云平台 抽取数据到 我们的财务报表系统
+
+ 5. 日报的计算、日报的补计算（指定一个日报日期，对该日期，重新计算）
