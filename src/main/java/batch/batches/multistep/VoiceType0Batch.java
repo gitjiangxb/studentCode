@@ -15,5 +15,5 @@ import org.springframework.context.annotation.Configuration;
 @EnableBatchProcessing
 @Configuration
 public class VoiceType0Batch {
-
+    
 }
