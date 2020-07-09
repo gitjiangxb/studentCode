@@ -25,7 +25,7 @@ public class MemoryDemo {
     /**
      * 堆内存溢出案例测试
      * 参数配置：-Xms10m -Xmx10m -XX:+PrintGCDetails
-     *
+     *  内存溢出自动导出(只需要配置参数)： -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=./
      * 错误信息：Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
      */
     public static void heap(){
