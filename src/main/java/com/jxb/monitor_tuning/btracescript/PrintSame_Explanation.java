@@ -6,6 +6,11 @@ import com.sun.btrace.annotations.OnMethod;
 import com.sun.btrace.annotations.ProbeClassName;
 import com.sun.btrace.annotations.ProbeMethodName;
 
+/**
+ * btrace脚本的编写 —— 拦截同名方法
+ * @Author: Jiangxb
+ * @Date: 2020/07/18 16:49
+ */
 @BTrace
 public class PrintSame_Explanation {
 

@@ -56,4 +56,20 @@ public class BtraceController {
     public String sname(@RequestParam("id") int id,@RequestParam("name") String name){
         return "hello , " + id + ":" + name;
     }
+
+    /**
+     * 测试4：btrace拦截异常，不管异常被包裹了多少层，只要有一个地方出错都能拦截到
+     * @return
+     */
+    @PostMapping("/exception")
+    public String exception(){
+        try {
+            System.out.println("start...");
+            System.out.println(1/0);
+            System.out.println("end...");
+        } catch (Exception e){
+            // 什么处理都不做，把异常吞掉了
+        }
+        return "success";
+    }
 }
