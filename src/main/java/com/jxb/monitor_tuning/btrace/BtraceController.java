@@ -36,4 +36,24 @@ public class BtraceController {
     public User constructor(@RequestBody User user){
         return user;
     }
+
+    /**
+     * 测试3：btrace拦截同名方法
+     * @param name
+     * @return
+     */
+    @PostMapping("/sname1")
+    public String sname(@RequestParam("name") String name){
+        return "hello ," + name;
+    }
+
+    /**
+     * 测试3：btrace拦截同名方法
+     * @param name
+     * @return
+     */
+    @PostMapping("/sname2")
+    public String sname(@RequestParam("id") int id,@RequestParam("name") String name){
+        return "hello , " + id + ":" + name;
+    }
 }
