@@ -20,6 +20,7 @@ public class PrintLine_Explanation {
     @OnMethod(
             clazz = "com.jxb.monitor_tuning.btrace.BtraceController",
             method = "exception",
+            // 说明：如果将这里的line赋值为“-1”，表示打印这个方法中所有被执行的行号 【line = -1】
             location = @Location(value = Kind.LINE,line = 67)
     )
     public static void line(@ProbeClassName String pcn, @ProbeMethodName String pmn, int line){
