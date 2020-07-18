@@ -1,9 +1,9 @@
 package com.jxb.monitor_tuning.btrace;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.jxb.monitor_tuning.entity.User;
+import org.springframework.web.bind.annotation.*;
+
+import javax.jws.soap.SOAPBinding;
 
 /**
  * btrace的使用
@@ -23,5 +23,17 @@ public class BtraceController {
     @PostMapping("/arg1")
     public String arg1(@RequestParam("name") String name){
         return "hello ," + name;
+    }
+
+
+    /**
+     * 测试2：利用btrace拦截构造函数
+     * @param user
+     * @return
+     */
+    @PostMapping("/constructor")
+    @ResponseBody
+    public User constructor(@RequestBody User user){
+        return user;
     }
 }

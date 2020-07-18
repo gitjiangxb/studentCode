@@ -5,7 +5,7 @@ import com.sun.btrace.BTraceUtils;
 import com.sun.btrace.annotations.*;
 
 /**
- * btrace脚本的编写 —— 监控简单的参数
+ * btrace脚本的编写 —— 监控简单的参数【PintArgSimple脚本的参数说明】
  * @Author: Jiangxb
  * @Date: 2020/07/18 14:59
  */
