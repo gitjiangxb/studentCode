@@ -17,4 +17,17 @@ public class PintArgSimple {
         BTraceUtils.println(pcn +"," + pmn);
         BTraceUtils.println();
     }
+
+    @OnMethod(
+            clazz = "com.jxb.monitor_tuning.btrace.BtraceController",
+            method = "arg1",
+            location = @Location(Kind.RETURN)
+    )
+    public static void methodReturn(@ProbeClassName String pcn, @ProbeMethodName String pmn, @Return AnyType returnStr){
+        BTraceUtils.println("Kind.RETURN");
+        BTraceUtils.println(pcn +"," + pmn + ", " + returnStr);
+        BTraceUtils.println();
+    }
+
+
 }
