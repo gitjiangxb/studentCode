@@ -85,5 +85,33 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.2.7.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.2.7.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.7.0" level="project" />
+    <orderEntry type="library" name="Maven: asm:asm:3.3.1" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.sun.btrace:btrace-agent:1.3.8.3">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../soft/java/Btrace/build/btrace-agent.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: com.sun.btrace:btrace-boot:1.3.8.3">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../soft/java/Btrace/build/btrace-boot.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: com.sun.btrace:btrace-client:1.3.8.3">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../soft/java/Btrace/build/btrace-client.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
