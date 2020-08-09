@@ -22,6 +22,8 @@ import java.util.concurrent.TimeUnit;
  *  第三种查看参数盘点家底方式(能查看当前默认的垃圾回收器是哪个？)
  *      -XX:+PrintCommandLineFlags -version
  *      -XX:+PrintCommandLineFlags
+ *
+ *   输出GC日志的参数：-Xms10m -Xmx10m -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:C:/Jiangxb/code/MySelf/studentDoc/gc.log -XX:+PrintHeapAtGC -XX:+PrintTenuringDistribution
  */
 public class HelloGC {
     public static void main(String[] args) throws InterruptedException {
