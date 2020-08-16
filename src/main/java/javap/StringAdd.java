@@ -23,8 +23,8 @@ public class StringAdd {
     }
 
     public static void f2(){
-        // 只要一个StringBuffer
-        StringBuffer src = new StringBuffer();
+        // 只要一个StringBuilder
+        StringBuilder src = new StringBuilder();
         for (int i = 0 ; i < 10 ; i++ ){
             src.append("A");
         }
