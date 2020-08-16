@@ -16,7 +16,7 @@ public class StringAdd {
     public static void f1(){
         String src = "";
         for (int i = 0 ; i < 10 ; i++ ){
-            // 每一次循环都会new一个StringBuffer
+            // 每一次循环都会new一个StringBuilder
             src = src + "A";
         }
         System.out.println(src);
