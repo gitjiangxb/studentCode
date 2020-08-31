@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.jxb</groupId>
-	<artifactId>master_test</artifactId>
+	<artifactId>spring_boot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>master_test</name>
+	<name>spring_boot</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
