@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>微信充值</title>
+    <style>
+        body {
+            background: #eee;
+            font-size: 14px;
+        }
+        *{margin:0; padding: 0; box-sizing: border-box;}
+
+        .wechatPay .w-header {
+            height: 80px;
+            line-height: 80px;
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+            background: #fff;
+        }
+
+        .pay-box {
+            width: 900px;
+            padding: 20px 50px;
+            margin: 50px auto;
+            background: #fff;
+        }
+
+        .pay-box h2 {
+            border-bottom: 1px solid #eee;
+            height: 80px;
+            line-height: 80px;
+            margin-bottom: 50px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .pay-box h2 b {
+            color: #f00;
+        }
+
+        .pay-info {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .pay-info:after {
+            content: '';
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+        .pay-info img {
+            width: 240px;
+            height: 240px;
+        }
+
+        .pay-info div {
+            margin-top: 50px;
+            width: 300px;
+            padding-left: 50px;
+        }
+
+        .pay-info div p {
+            line-height: 30px;
+            font-size: 16px;
+        }
+
+        .pay-info div p span {
+            color: #999;
+        }
+
+        .bot {
+            margin-top: 50px;
+            color: #999;
+            line-height: 25px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wechatPay">
+        <div class="w-header">
+            <Icon type="chatbubbles" style=" color:#0ad30a; margin-right:10px; font-size:28px;"></Icon>微信支付</div>
+        <div class="pay-box">
+            <h2>支付金额
+                <b th:text="${amount}"></b>元，请使用微信扫描下方二维码完成支付</h2>
+            <div class="pay-info">
+                <img th:src="${qrcode}" />
+                <div>
+                    <p>
+                        <span>商家名称：</span>牛信网络科技</p>
+                    <p>
+                        <span>支付方式：</span>微信充值</p>
+                    <p>
+                        <span>交易单号：</span><span th:text="${out_trade_no}"></span></p>
+
+                </div>
+            </div>
+        </div>
+        <div class="bot">
+            浙公网安备 33020302000376 号 浙 ICP 备 16041108号 -1
+            <br/> 本服务由 牛信网络 提供
+        </div>
+    </div>
+</body>
+
+</html>

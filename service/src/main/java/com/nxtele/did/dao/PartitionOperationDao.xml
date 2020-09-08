@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nxtele.did.dao.PartitionOperationDao">
+    <resultMap id="PartitionInfoMap" type="com.nxtele.did.entity.PartitionInfo">
+        <result column="table_schema" property="tableSchema"/>
+        <result column="table_name" property="tableName"/>
+        <result column="table_rows" property="tableRows"/>
+        <result column="partition_name" property="partitionName"/>
+        <result column="partition_ordinal_position" property="partitionOrdinalPosition"/>
+        <result column="partition_method" property="partitionMethod"/>
+        <result column="partition_expression" property="partitionExpression"/>
+    </resultMap>
+
+    <!-- 在传入“表名”作为参数时，一定要使用“${tableName}”的格式-->
+    <select id="getPartitionInfo" resultMap="PartitionInfoMap">
+        select table_schema, table_name, table_rows,partition_name, partition_ordinal_position, partition_method, partition_expression
+        from information_schema.`PARTITIONS`
+        WHERE table_schema = #{tableSchema} AND table_name = #{tableName}
+    </select>
+
+    <!--  返回值为“PRI”则为主键,返回空则不是  -->
+    <select id="checkFieldIsAPrimaryKey" resultType="java.lang.String">
+        select column_key
+        from information_schema.columns
+        WHERE table_schema = #{tableSchema} AND table_name = #{tableName} AND column_name = #{fieldName}
+    </select>
+
+    <update id="createPartition">
+        ALTER TABLE ${tableName} PARTITION BY RANGE (TO_DAYS(${partitionField})) (
+            PARTITION ${partitionName} VALUES LESS THAN (TO_DAYS(${partitionInterval})) ENGINE = InnoDB
+        )
+    </update>
+
+    <update id="addPartition">
+        alter TABLE ${tableName} add PARTITION(
+            PARTITION ${partitionName} VALUES LESS THAN (TO_DAYS(#{partitionInterval})) ENGINE = InnoDB
+        )
+    </update>
+
+    <update id="deletePartition">
+        alter table ${tableName}  drop PARTITION ${partitionName}
+    </update>
+
+    <update id="createBackupTable">
+        CREATE TABLE IF NOT EXISTS ${backupTableName} LIKE ${tableName}
+    </update>
+
+    <update id="removePartitioning">
+        ALTER TABLE ${backupTableName} REMOVE PARTITIONING
+    </update>
+
+    <update id="cuttingOutPartitioning">
+        ALTER TABLE ${tableName} EXCHANGE PARTITION ${partitionName} WITH TABLE ${backupTableName}
+    </update>
+</mapper>
